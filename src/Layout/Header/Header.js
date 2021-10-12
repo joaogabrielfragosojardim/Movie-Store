@@ -1,10 +1,10 @@
 import React from "react";
-import CartIcon from "../Assets/CartIcon";
-import FavIcon from "../Assets/FavIcon";
-import "../Layout/Header.css";
+import CartIcon from "../../Assets/CartIcon";
+import FavIcon from "../../Assets/FavIcon";
+import "../Header/Header.css"
 
 function Header() {
-  const width = "35px";
+  const width = "45px";
   return (
     <div className="header">
       <div className="logo">LOGO</div>

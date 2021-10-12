@@ -1,0 +1,34 @@
+import React, { useState } from "react";
+import axios from "axios";
+import MovieCard from "./MovieCard.js";
+
+function MovieList() {
+  const API_KEY = "866cbccb21c2ad041a9e1916053994d5";
+  const URL = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=pt-BR`;
+  const [films, setFilms] = useState(null);
+
+  async function getFilm() {
+    try {
+      const response = await axios.get(URL);
+      setFilms(response.data.results);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  getFilm();
+
+  if (films === null) {
+    return <div>Loading...</div>;
+  } else {
+    return (
+      <div>
+        {films.map((film) => {
+          return <MovieCard title={film.title}/>
+        })}
+      </div>
+    );
+  }
+}
+
+export default MovieList;
