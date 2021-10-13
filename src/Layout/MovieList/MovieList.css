@@ -1,0 +1,8 @@
+.films-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 80px 190px;
+  justify-content: center;
+  justify-items: center;
+  gap: 35px;
+}
