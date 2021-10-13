@@ -1,6 +1,7 @@
 import React from "react";
 import CartIcon from "../../Assets/CartIcon";
 import FavIcon from "../../Assets/FavIcon";
+import Search from "../../Assets/Search";
 import "../Header/Header.css"
 
 function Header() {
@@ -10,6 +11,7 @@ function Header() {
       <div className="logo">LOGO</div>
       <div className="search-results">
         <input type="text" placeholder="Pesquisa"></input>
+        <Search/>
       </div>
       <div className="fav-and-cart">
         <FavIcon width={width} />
