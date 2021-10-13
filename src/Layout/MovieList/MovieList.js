@@ -24,7 +24,15 @@ function MovieList() {
     return (
       <div>
         {films.map((film) => {
-          return <MovieCard title={film.title}/>
+          return (
+            <MovieCard
+              title={film.title}
+              imgUrl={film.poster_path}
+              date={film.release_date}
+              stars={film.vote_average}
+              genre={film.genre_ids[0]}
+            />
+          );
         })}
       </div>
     );
