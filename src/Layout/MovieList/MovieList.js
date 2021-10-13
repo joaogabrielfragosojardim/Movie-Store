@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import MovieCard from "./MovieCard.js";
+import "../MovieList/MovieList.css"
 
 function MovieList() {
   const API_KEY = "866cbccb21c2ad041a9e1916053994d5";
@@ -22,7 +23,7 @@ function MovieList() {
     return <div>Loading...</div>;
   } else {
     return (
-      <div>
+      <div className ="films-grid">
         {films.map((film) => {
           return (
             <MovieCard

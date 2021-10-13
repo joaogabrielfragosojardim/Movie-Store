@@ -1,4 +1,5 @@
 import React from "react";
+import "../MovieList/MovieCard.css";
 
 function MovieCard(props) {
   const imgUrl = props.imgUrl;
@@ -8,10 +9,14 @@ function MovieCard(props) {
   const gender = props.gender;
 
   return (
-    <div>
-      <div>
-        <img src={`https://image.tmdb.org/t/p/w500${imgUrl}`} alt={title}></img>
-        <h3>{date}</h3>
+    <div className="card">
+      <div className="banner-container">
+        <img
+          src={`https://image.tmdb.org/t/p/w500${imgUrl}`}
+          alt={title}
+          className="movie-banner"
+        ></img>
+        <h3 className="date">{date}</h3>
       </div>
       <h2>{title}</h2>
       <div>
@@ -19,7 +24,7 @@ function MovieCard(props) {
         <h3>{gender}</h3>
       </div>
       <h2>150,00</h2>
-      <button>Adicionar</button>
+      <button className="card-button">Adicionar</button>
     </div>
   );
 }
