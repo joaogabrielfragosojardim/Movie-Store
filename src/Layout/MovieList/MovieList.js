@@ -10,7 +10,7 @@ function MovieList() {
   const { data, error } = useSWR(URL, fetcher);
 
   if (error) return "An error has occurred.";
-  if (!data) return <div></div>;
+  if (!data) return <></>;
 
   return (
     <div className="films-grid">
