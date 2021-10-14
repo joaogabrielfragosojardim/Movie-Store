@@ -6,3 +6,22 @@
   justify-items: center;
   gap: 35px;
 }
+
+@media screen and (max-width: 1350px) {
+  .films-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 1025px) {
+  .films-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .films-grid {
+    padding: 80px 0px;
+    grid-template-columns: 1fr;
+  }
+}
