@@ -1,7 +1,7 @@
 import React from "react";
-import "../MovieList/MovieCard.css";
-import StarIcon from "../../Assets/StarIcon";
-import FavIconCards from "../../Assets/FavIconCards";
+import "./MovieCard.css";
+import StarIcon from "../../../Assets/StarIcon";
+import FavIconCards from "../../../Assets/FavIconCards";
 
 function MovieCard(props) {
   const imgUrl = props.imgUrl;

@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import useSWR from "swr";
 import MovieCard from "./MovieCard.js";
-import "../MovieList/MovieList.css";
+import "./MovieList.css";
 
 function MovieList() {
   const API_KEY = "866cbccb21c2ad041a9e1916053994d5";
@@ -23,6 +23,7 @@ function MovieList() {
             stars={film.vote_average}
             genre={film.genre_ids[0]}
             id={film.id}
+            key={film.id}
           />
         );
       })}
