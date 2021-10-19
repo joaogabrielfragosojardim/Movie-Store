@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import axios from "axios";
 import MovieCard from "./MovieCard.js";
 import "./MovieList.css";
-import { useFilms } from "../../../Request/films";
+import { useFilms } from "../../../Context/films";
 
 const API_KEY = "866cbccb21c2ad041a9e1916053994d5";
 const URL = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=pt-BR`;

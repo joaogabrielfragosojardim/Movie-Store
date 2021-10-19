@@ -1,6 +1,6 @@
 import React from "react";
 import MovieList from "./MovieList/MovieList";
-import FilmsProvider from "../../Request/films";
+import FilmsProvider from "../../Context/films";
 
 function Dashboard() {
   return (
