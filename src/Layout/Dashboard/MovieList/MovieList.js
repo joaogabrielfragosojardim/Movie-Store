@@ -1,13 +1,28 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
+import axios from "axios";
 import MovieCard from "./MovieCard.js";
 import "./MovieList.css";
-import useApi from "../../../Request/useApi.js";
+import { useFilms } from "../../../Request/films";
+
+const API_KEY = "866cbccb21c2ad041a9e1916053994d5";
+const URL = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=pt-BR`;
+
+const apiGet = axios.create({
+  baseURL: URL,
+});
+
+let response = "";
 
 function MovieList() {
+  const { films, setFilms } = useFilms();
 
-  const films = useApi()[0]
-
-  console.log(useApi())
+  useEffect(() => {
+    async function getFilms() {
+      response = await apiGet.get("");
+      setFilms(response.data.results);
+    }
+    getFilms();
+  }, [setFilms]);
 
   if (films) {
     return (
