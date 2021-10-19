@@ -1,19 +1,13 @@
 import React, { useEffect, useState } from "react";
 import MovieCard from "./MovieCard.js";
 import "./MovieList.css";
-import api from "../../../Request/api.js";
+import useApi from "../../../Request/useApi.js";
 
 function MovieList() {
-  const [films, setFilms] = useState([]);
 
-  useEffect(() => {
-    async function getFilms() {
-      const response = await api.get("");
-      setFilms(response.data.results);
-    }
+  const films = useApi()[0]
 
-    getFilms();
-  }, []);
+  console.log(useApi())
 
   if (films) {
     return (
