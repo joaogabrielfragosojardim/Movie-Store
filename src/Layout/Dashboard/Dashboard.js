@@ -1,12 +1,13 @@
 import React from "react";
 import MovieList from "./MovieList/MovieList";
-import FilmsProvider from "../../Context/films";
+import Select from "./Select/Select";
 
 function Dashboard() {
   return (
-    <FilmsProvider>
+    <>
+      <Select />
       <MovieList />
-    </FilmsProvider>
+    </>
   );
 }
 
