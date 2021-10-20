@@ -24,6 +24,9 @@ function Select() {
       case "precoDecrescente":
         precoDecrescente(films);
         break;
+
+      default:
+        popularidade(films);
     }
   }
 
@@ -61,26 +64,26 @@ function Select() {
     setFilms(filmsFilter.slice());
   }
 
-    function precoDecrescente(films) {
-      let filmsFilter = films.sort(function (a, b) {
-        if (a.vote_average > b.vote_average) {
-          return -1;
-        } else {
-          return true;
-        }
-      });
+  function precoDecrescente(films) {
+    let filmsFilter = films.sort(function (a, b) {
+      if (a.vote_average > b.vote_average) {
+        return -1;
+      } else {
+        return true;
+      }
+    });
 
-      setFilms(filmsFilter.slice());
-    }
+    setFilms(filmsFilter.slice());
+  }
 
   return (
     <div id="container-select">
       <select id="filter-films" onChange={changeFilm}>
         <option>Filtrar</option>
-        <option value="popularidade">Popularidade</option>
         <option value="ordemAlfabetica">Ordem Alfabetica</option>
         <option value="precoCrescente">Preço Crescente</option>
         <option value="precoDecrescente">Preço Decrescente</option>
+        <option value="popularidade">Popularidade</option>
       </select>
     </div>
   );
