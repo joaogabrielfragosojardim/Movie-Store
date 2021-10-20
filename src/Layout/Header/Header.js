@@ -9,12 +9,19 @@ function Header() {
   const { films, setFilms } = useFilms();
 
   function pesquisar(d) {
-    const keys = d.target.value;
+    const keys = d.target.value.toLowerCase();
+    const initialState = films.splice();
 
-    for(let i = 0; i++; i<films.length){
-      if(keys === films.title){
-        console.log(0)
-      }
+    const searchFilms = films.filter(function (el) {
+      return el.title.toLowerCase().includes(keys);
+    });
+
+    if (keys === "") {
+      console.log(keys);
+    } else {
+      console.log(searchFilms);
+
+      setFilms(searchFilms);
     }
   }
 
