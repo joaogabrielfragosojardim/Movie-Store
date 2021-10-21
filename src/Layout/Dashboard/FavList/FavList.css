@@ -1,0 +1,7 @@
+#fav-list{
+    width: 50vh;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.548);
+    position: absolute;
+    right:0
+}
