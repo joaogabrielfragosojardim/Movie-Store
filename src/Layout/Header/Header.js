@@ -55,7 +55,7 @@ function Header() {
           </div>
         </div>
         <div className="search-results">
-          <input type="text" placeholder="Pesquisa"></input>
+          <input type="text" placeholder="Pesquisa" onKeyUp={pesquisar}></input>
           <Search />
         </div>
       </div>
