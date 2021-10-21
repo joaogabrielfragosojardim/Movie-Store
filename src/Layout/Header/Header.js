@@ -12,7 +12,6 @@ function Header() {
   let filteredFilms = [];
 
   useEffect(() => {
-    console.log(0);
     const loadedFilms = async () => {
       let awaitFilmList = await api.getFilmList();
 
