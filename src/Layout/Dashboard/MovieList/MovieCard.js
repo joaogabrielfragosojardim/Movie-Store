@@ -131,7 +131,7 @@ function MovieCard(props) {
           alt={title}
           className="movie-banner"
         ></img>
-        <FavIconCards id={id}/>
+        <FavIconCards id={id} />
         <h3 className="date">{`${formatedDate[2]} de ${formatedDate[1]}, ${formatedDate[0]}`}</h3>
       </div>
       <div className="container-infos">

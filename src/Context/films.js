@@ -1,11 +1,9 @@
-import React, { createContext, useState } from "react";
-import { useContext } from "react/cjs/react.development";
+import React, { createContext, useState, useContext } from "react";
 
 const FilmsContext = createContext();
 
 export default function FilmsProvider({ children }) {
   const [films, setFilms] = useState();
-
   return (
     <FilmsContext.Provider value={{ films, setFilms }}>
       {children}
