@@ -8,8 +8,8 @@ import api from "../../API/api";
 
 function Header() {
   const { setFilms } = useFilms();
-  const [filmList, setFilmsList] = useState(false);
-  const [filteredFilms, setFilteredFilms] = useState([]);
+  const [filmList, setFilmsList] = useState([]);
+  let filteredFilms = [];
 
   useEffect(() => {
     console.log(0);
@@ -17,18 +17,20 @@ function Header() {
       let awaitFilmList = await api.getFilmList();
 
       if (awaitFilmList) {
-        setFilms(awaitFilmList.films);
+        awaitFilmList = awaitFilmList.films;
+        setFilmsList(awaitFilmList);
+        setFilms(awaitFilmList);
       }
     };
     loadedFilms();
-  }, [setFilms, setFilmsList, filteredFilms]);
+  }, [setFilmsList, setFilms]);
 
   function pesquisar(d) {
     const keys = d.target.value.toLowerCase();
-    const filteredFilms = filmList.filter((film) =>
+    filteredFilms = filmList.filter((film) =>
       film.title.toLowerCase().startsWith(keys)
     );
-    setFilteredFilms(filteredFilms);
+    setFilms(filteredFilms);
   }
 
   const width = "45px";
