@@ -1,28 +1,34 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useFilms } from "../../Context/films";
 import CartIcon from "../../Assets/CartIcon";
 import FavIcon from "../../Assets/FavIcon";
 import Search from "../../Assets/Search";
 import "../Header/Header.css";
+import api from "../../API/api";
 
 function Header() {
-  const { films, setFilms } = useFilms();
+  const { setFilms } = useFilms();
+  const [filmList, setFilmsList] = useState(false);
+  const [filteredFilms, setFilteredFilms] = useState([]);
+
+  useEffect(() => {
+    console.log(0);
+    const loadedFilms = async () => {
+      let awaitFilmList = await api.getFilmList();
+
+      if (awaitFilmList) {
+        setFilms(awaitFilmList.films);
+      }
+    };
+    loadedFilms();
+  }, [setFilms, setFilmsList, filteredFilms]);
 
   function pesquisar(d) {
     const keys = d.target.value.toLowerCase();
-    const initialState = films.splice();
-
-    const searchFilms = films.filter(function (el) {
-      return el.title.toLowerCase().includes(keys);
-    });
-
-    if (keys === "") {
-      console.log(keys);
-    } else {
-      console.log(searchFilms);
-
-      setFilms(searchFilms);
-    }
+    const filteredFilms = filmList.filter((film) =>
+      film.title.toLowerCase().startsWith(keys)
+    );
+    setFilteredFilms(filteredFilms);
   }
 
   const width = "45px";

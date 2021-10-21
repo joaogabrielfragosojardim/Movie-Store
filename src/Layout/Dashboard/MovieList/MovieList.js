@@ -1,28 +1,10 @@
-import React, { useEffect } from "react";
-import axios from "axios";
+import React from "react";
 import MovieCard from "./MovieCard.js";
 import "./MovieList.css";
 import { useFilms } from "../../../Context/films";
 
-const API_KEY = "866cbccb21c2ad041a9e1916053994d5";
-const URL = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=pt-BR`;
-
-const apiGet = axios.create({
-  baseURL: URL,
-});
-
-let response = "";
-
 function MovieList() {
-  const { films, setFilms } = useFilms();
-
-  useEffect(() => {
-    async function getFilms() {
-      response = await apiGet.get("");
-      setFilms(response.data.results);
-    }
-    getFilms();
-  }, [setFilms]);
+  const { films } = useFilms();
 
   if (films) {
     return (
@@ -43,7 +25,7 @@ function MovieList() {
       </div>
     );
   } else {
-    return <div>b</div>;
+    return <div>loading...</div>;
   }
 }
 
