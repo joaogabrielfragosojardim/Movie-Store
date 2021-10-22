@@ -1,0 +1,26 @@
+#container-dashboard {
+  display: flex;
+  width: calc(100vw + 450px);
+}
+
+.container-animation {
+  transition: 0.3s;
+}
+
+#container-select-movies {
+  width: 100vw;
+  height: inherit;
+}
+
+#container-fav-list {
+  display: none;
+  width: 450px;
+  height: 100vh;
+  background-color: rgb(255, 255, 255);
+  border-left: solid #c3cfd9 2px;
+  border-top: solid #c3cfd9 2px;
+}
+
+.expanded body {
+  overflow-y: hidden;
+}
