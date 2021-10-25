@@ -3,13 +3,7 @@ import "./MovieCard.css";
 import StarIcon from "../../../Assets/StarIcon";
 import FavIconCards from "../../../Assets/FavIconCards";
 
-function MovieCard(props) {
-  const imgUrl = props.imgUrl;
-  const date = props.date;
-  const title = props.title;
-  const stars = props.stars;
-  const genre = props.genre;
-  const id = props.id;
+function MovieCard({ imgUrl, date, title, stars, genre, id }) {
   let price = stars * 3.5;
   price = price.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
 

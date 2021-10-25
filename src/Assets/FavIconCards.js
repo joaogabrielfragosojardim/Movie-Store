@@ -1,8 +1,10 @@
 import React from "react";
+import { useFavFilms } from "../Context/favFilms";
 import { useFilms } from "../Context/films";
 
 function FavIcon(props) {
   const { films } = useFilms();
+  const { favFilms, setFavFilms } = useFavFilms();
 
   const id = props.id;
 
@@ -12,12 +14,8 @@ function FavIcon(props) {
     if (icon.classList.contains("fav-icon-cards")) {
       icon.classList.add("fav-icon-cards-active");
       icon.classList.remove("fav-icon-cards");
-      films.map((film)=>{
-        if(film.id === parseInt(c.target.id)){
-         
-        }
-         return console.log(films);
-      })
+      let favList = films.find((film) => film.id === parseInt(icon.id));
+      setFavFilms(favFilms.concat(favList));
     } else {
       icon.classList.add("fav-icon-cards");
       icon.classList.remove("fav-icon-cards-active");

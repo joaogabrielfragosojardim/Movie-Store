@@ -7,16 +7,14 @@ function FavIcon(props) {
     const icon = c.target;
     const containerFilms = document.getElementById("container-select-movies");
     const containerFavList = document.getElementById("container-fav-list");
-    const body = document.getElementsByTagName("body")[0];
+
 
     if (icon.classList.contains("expanded")) {
       containerFilms.style.width = "100vw";
       containerFavList.style.display = "none";
       icon.classList.remove("expanded");
-      body.classList.remove("overflow-y");
     } else {
       icon.classList.add("expanded");
-      body.classList.add("overflow-y");
       containerFilms.style.width = "calc(100vw - 450px)";
       containerFavList.style.display = "inline";
     }

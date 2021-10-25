@@ -1,0 +1,13 @@
+#container-fav-list {
+  position: sticky;
+  top: 0px;
+  width: 450px;
+  height: 100vh;
+  background-color: rgb(255, 255, 255);
+  border-left: solid #c3cfd9 2px;
+  border-top: solid #c3cfd9 2px;
+}
+
+.expanded body {
+  overflow-y: hidden;
+}
