@@ -2,11 +2,9 @@ import React from "react";
 import { useFavFilms } from "../Context/favFilms";
 import { useFilms } from "../Context/films";
 
-function FavIcon(props) {
+function FavIcon({ id, fav }) {
   const { films } = useFilms();
   const { favFilms, setFavFilms } = useFavFilms();
-
-  const id = props.id;
 
   function addToFav(c) {
     let icon = document.getElementById(id);
