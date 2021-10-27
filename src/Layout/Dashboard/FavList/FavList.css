@@ -11,3 +11,34 @@
 .expanded body {
   overflow-y: hidden;
 }
+
+#header-fav-list {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  padding: 30px;
+  font-family: sans-serif;
+}
+
+#header-fav-list h2 {
+  font-size: 1.3rem;
+}
+
+#header-fav-list button {
+  background-color: transparent;
+  border: none;
+  text-decoration: underline;
+  color: #483eb4;
+  font-size: 0.8rem;
+}
+
+#header-fav-list button:hover {
+  cursor: pointer;
+}
+
+#scroller-fav-list {
+  height: calc(100vh - 70px);
+  overflow-y: scroll;
+}

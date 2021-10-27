@@ -9,14 +9,29 @@ function FavIcon({ id, fav }) {
   function addToFav(c) {
     let icon = document.getElementById(id);
 
-    if (icon.classList.contains("fav-icon-cards")) {
-      icon.classList.add("fav-icon-cards-active");
-      icon.classList.remove("fav-icon-cards");
-      let favList = films.find((film) => film.id === parseInt(icon.id));
-      setFavFilms(favFilms.concat(favList));
+    if (icon.classList.contains("fav-icon-cards-active")) {
+      films.forEach((film) => {
+        if (film.id === parseInt(icon.id)) {
+          film.fav = false;
+
+          if (film.fav === false) {
+            icon.classList.remove("fav-icon-cards-active");
+            icon.classList.add("fav-icon-cards");
+          }
+        }
+      });
     } else {
-      icon.classList.add("fav-icon-cards");
-      icon.classList.remove("fav-icon-cards-active");
+      films.forEach((film) => {
+        if (film.id === parseInt(icon.id)) {
+          setFavFilms(favFilms.concat(film));
+          film.fav = true;
+
+          if (film.fav === true) {
+            icon.classList.add("fav-icon-cards-active");
+            icon.classList.remove("fav-icon-cards");
+          }
+        }
+      });
     }
   }
 
