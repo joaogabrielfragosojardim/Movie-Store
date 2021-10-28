@@ -15,7 +15,4 @@ function Dashboard() {
         <FavList />
       </div>
     </div>
-  );
-}
 
-export default Dashboard;
