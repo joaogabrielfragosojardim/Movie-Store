@@ -3,13 +3,7 @@ import "./MovieCard.css";
 import StarIcon from "../../../Assets/StarIcon";
 import FavIconCards from "../../../Assets/FavIconCards";
 
-function MovieCard(props) {
-  const imgUrl = props.imgUrl;
-  const date = props.date;
-  const title = props.title;
-  const stars = props.stars;
-  const genre = props.genre;
-  const id = props.id;
+function MovieCard({ imgUrl, date, title, stars, genre, id, fav }) {
   let price = stars * 3.5;
   price = price.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
 
@@ -131,7 +125,7 @@ function MovieCard(props) {
           alt={title}
           className="movie-banner"
         ></img>
-        <FavIconCards id={id} />
+        <FavIconCards id={id} fav={fav} />
         <h3 className="date">{`${formatedDate[2]} de ${formatedDate[1]}, ${formatedDate[0]}`}</h3>
       </div>
       <div className="container-infos">

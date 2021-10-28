@@ -1,0 +1,13 @@
+#container-dashboard {
+  display: flex;
+  width: calc(100vw + 450px);
+}
+
+.container-animation {
+  transition: 0.3s;
+}
+
+#container-select-movies {
+  width: 100vw;
+  height: inherit;
+}

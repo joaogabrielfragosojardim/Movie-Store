@@ -13,8 +13,10 @@ function MovieList() {
       return (
         <div className="films-grid">
           {films.map((film) => {
+            film.fav = false;
             return (
               <MovieCard
+                fav={film.fav}
                 title={film.title}
                 imgUrl={film.poster_path}
                 date={film.release_date}
